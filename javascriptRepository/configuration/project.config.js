@@ -12,7 +12,8 @@ const ownConfiguration = {
     }, 
   },
   entrypoint: {
-    programmaticAPI: './script.js'
+    programmaticAPI: './script.js',
+    cli: './commandLine.js',
   },
   script,
   transpilation: {
