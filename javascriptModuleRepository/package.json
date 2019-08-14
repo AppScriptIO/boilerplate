@@ -1,0 +1,38 @@
+{
+    "name": "@dependency/boilerplate",
+    "description": "A Javascript module with multiple  to github releases.",
+    "version": "1.0.0",
+    "main": "./entrypoint/programmaticAPI",
+    "bin": {
+        "cli": "./entrypoint/cli"  
+    },
+    "files": [
+        "./distribution"
+    ],
+    "workspaces": [
+        "source",
+        "./script/*"
+    ],
+    "private": true,
+    "scripts": {
+        "setup": "yarn install --production=false",
+        "test": "yarn run scriptManager test \"({ testPath: './test' })\"",
+		"testBreaK": "export NODE_OPTIONS='--inspect-brk' && yarn run scriptManager test \"({ testPath: './test', shouldDebugger: false, shouldCompileTest: true })\"",
+        "generateTypes": "tsc --project ./configuration/typescript.config.json",
+		"sleep": "yarn run scriptManager sleep '.setInterval()' ",
+        "exportGraphData": "yarn run scriptManager shouldCompileScript=true graphDatabase/exportGraphData \".exportGraphData({targetPath: './resource',fileName: 'taskSequence.graphData.json'})\"",
+        "loadGraphData": "yarn run scriptManager shouldCompileScript=true graphDatabase/exportGraphData \".loadGraphDataFromFile({ shouldClearDatabase: true, graphDataFilePath: './resource/taskSequence.graphData.json' })\"",    
+		"build": "yarn run scriptManager shouldCompileScript=true JSProject/buildSourceCode \".moduleProject({}, {compile:[/**'./test'*/})\"",
+		"bumpVersion": "yarn run scriptManager shouldCompileScript=true JSProject/packageVersion \".bumpVersion({})\"",
+		"buildAndRelease": "yarn run scriptManager shouldCompileScript=true JSProject/buildAndRelease \".moduleProject({})\""
+    },
+    "flat": false,
+    "dependencies": {},
+    "devDependencies": {
+        "@dependency/deploymentScript": "https://github.com/AppScriptIO/deploymentScript#semver:^1.x.x",
+        "@dependency/javascriptTranspilation": "https://github.com/AppScriptIO/javascriptTranspilation#semver:^1.x.x",
+        "@dependency/javascriptStaticAnalysis": "https://github.com/AppScriptIO/javascriptStaticAnalysis#semver:^1.x.x",
+        "@dependency/scriptManager": "https://github.com/AppScriptIO/scriptManager#semver:^1.x.x",
+        "typescript": "^3.3.3333"
+    }
+}
