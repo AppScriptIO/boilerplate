@@ -16,6 +16,7 @@
     "private": true,
     "scripts": {
         "setup": "yarn install --production=false",
+        "lint": "yarn run eslint --fix --config \"./configuration/eslint.config.js\" \"./\"",
         "test": "yarn run scriptManager test \"({ testPath: './test' })\"",
 		"testBreaK": "export NODE_OPTIONS='--inspect-brk' && yarn run scriptManager test \"({ testPath: './test', shouldDebugger: false, shouldCompileTest: true })\"",
         "generateTypes": "tsc --project ./configuration/typescript.config.json",
