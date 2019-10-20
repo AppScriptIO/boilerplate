@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "build": "yarn run scriptManager shouldCompileScript=true JSProject/buildSourceCode \".webappProject({})\""
+  }
+}
