@@ -1,5 +1,6 @@
 {
   "scripts": {
-    "build": "yarn run scriptManager shouldCompileScript=true JSProject/buildSourceCode \".webappProject({})\""
+    "build": "yarn run scriptManager shouldCompileScript=true @dependency/deploymentScript \".buildSourceCode.moduleProject({}, {compile:[/**'./test'*/]})\"",
+    "buildAndRelease": "yarn run scriptManager shouldCompileScript=true @dependency/deploymentScript \".buildAndRelease.moduleProject({})\""
   }
 }
