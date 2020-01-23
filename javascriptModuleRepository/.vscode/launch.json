@@ -5,7 +5,7 @@
     - run vscode debugger (F5), restart mode is on which will make vscode attach automatically when the tool watching files restarts the process.
       While the option Auto Attach in VSCode settings.json doesn't support processes in the vscode integrated console.
 
-      e.g. node --inspect-brk --nolazy ./node_modules/@dependency/scriptManager/source/entrypoint/cli/invokeCli.js test "({ testPath: './test/script.test.js' })"
+      e.g. node --inspect-brk --nolazy ./node_modules/@deployment/scriptManager/source/entrypoint/cli/invokeCli.js test "({ testPath: './test/script.test.js' })"
   */
   "version": "0.2.0",
   "configurations": [{
@@ -68,7 +68,7 @@
     //     //   "--preserve-symlinks-main", // If your main script is inside a symlinked path, then you will also need to add the "--preserve-symlinks-main" option
     //     //   // "rarg1", "rarg2"
     //   ],
-    //   "program": "${workspaceFolder}/node_modules/@dependency/scriptManager/entrypoint/cli/index.js",
+    //   "program": "${workspaceFolder}/node_modules/@deployment/scriptManager/entrypoint/cli/index.js",
     //   "args": ["test", "\"({ testPath: './test' })\""],
     //   "cwd": "${workspaceFolder}",
     //   "sourceMaps": true, // will read source maps even Babel runtime transformed.
