@@ -1,7 +1,8 @@
 {
   "scripts": {
-    "run": "yarn run scriptManager ./ \".application()\"",
-		"run-pureCommand": "sudo node --eval \"require(process.cwd()).application()\"",
+		"runDevelopment": "sudo yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".run.default({})\"",
+    "runProduction": "yarn run scriptManager ./ \".application()\"",
+    "run-pureCommand": "sudo node --eval \"require(process.cwd()).application()\"",
     "build": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildSourceCode.moduleProject({}, {compile:[/**'./test'*/]})\"",
     "buildAndRelease": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".buildAndRelease.moduleProject({})\""
   }
