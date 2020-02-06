@@ -1,13 +1,14 @@
 {
   "scripts": {
     
-    "post-install": "cd ./source/clientSide/packageManager && yarn workspaces run install",
+		"post-install": "cd ./source/clientSide/packageManager && yarn workspaces run install",
 		"run": "node --eval \"require(process.cwd()).application()\"",
 		"run-throughScriptManager": "yarn run scriptManager ./ \".application()\"",
-		"run-configuredForContainer": "node --eval \"require(process.cwd()).application({}, { memgraph: { host: 'memgraph' }})\"",
+		"container-bash": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".container.run.runApplication({})\"",
 		"container-run": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".container.run.runApplication({ scriptCommandName: 'run-configuredForContainer' })\"",
-		"container-run-command": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \" .container.run.runApplication({ scriptCommand: ' node --eval \\\"  require(process.cwd()).application({}, { memgraph: { host: \\'memgraph\\' }}) \\\"  '}) \"",
+		"run-configuredForContainer": "node --eval \"require(process.cwd()).application({}, { memgraph: { host: 'memgraph' }})\"",
 		"container-livereload": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".container.run.runApplication({ scriptCommandName: 'livereload-configuredForContainer' })\"",
+		"container-run-command": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \" .container.run.runApplication({ scriptCommand: ' node --eval \\\"  require(process.cwd()).application({}, { memgraph: { host: \\'memgraph\\' }}) \\\"  '}) \"",
 		"livereload": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".run.default({})\"",
 		"livereload-configuredForContainer": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".run.default({ application: [{},{ memgraph: { host: 'memgraph' }}] })\"",
 		"test": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".test.default({ testPath: ['./test'], shouldDebugger: false, shouldCompileTest: true })\"",

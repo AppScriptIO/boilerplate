@@ -20,7 +20,7 @@
 		"upgrade": "yarn workspaces run upgrade",
         "lint": "yarn run eslint --fix --config \"./configuration/eslint.config.js\" \"./\"",
         "test": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".test({ testPath: ['./test'] })\"",
-            "test-break": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".test.default({ testPath: ['./test'], shouldDebugger: true, shouldCompileTest: true })\"",
+        "test-break": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript \".test.default({ testPath: ['./test'], shouldDebugger: true, shouldCompileTest: true })\"",
         "testBreaKScriptManager": "export NODE_OPTIONS='--inspect-brk' && yarn run scriptManager @deployment/deploymentScript \".test({ testPath: ['./test'], shouldDebugger: false, shouldCompileTest: true })\"",
         "generateTypes": "tsc --project ./configuration/typescript.config.json",
         "sleep": "yarn run scriptManager shouldCompileScript=true @deployment/deploymentScript '.sleep.setInterval()' ",
