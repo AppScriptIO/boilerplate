@@ -2,13 +2,13 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "A boilerplate for project stracuture & tools for MERN stack",
-  "main": "main.js",
+  "main": "./server/template.js",
   "keywords": [
     "React"
   ],
   "scripts": {
-    "transpile-server": "webpack --mode=development --config webpack.config.server.js", 
-    "transpile-client": "webpack --mode=development --config webpack.config.client.js", 
+    "transpile-server": "webpack --mode=development --config webpack.config.server.js",
+    "transpile-client": "webpack --mode=development --config webpack.config.client.js",
     "run-server": "node ./dist/server.generated.js",
     "development": "nodemon",
     "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
@@ -31,7 +31,7 @@
     "babel-loader": "*",
     "core-js": "^3.6.4",
     "nodemon": "^2.0.2",
-    "webpack": "^4.42.1",
+    "webpack": "next",
     "webpack-cli": "^3.3.11",
     "webpack-node-externals": "*"
   }
