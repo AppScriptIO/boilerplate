@@ -2,12 +2,13 @@ const path = require('path')
 const webpack = require('webpack')
 const CURRENT_WORKING_DIR = process.cwd()
 
-
 const config = {
     name: "browser",
     mode: "development",
     devtool: 'eval-source-map',
     entry: [
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client?reload=true',
         path.join(CURRENT_WORKING_DIR, 'client/main.js')
     ],
     output: {
@@ -18,12 +19,13 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: [ 'babel-loader' ]
             }
         ]
     },  plugins: [
+            new webpack.HotModuleReplacementPlugin(),
             new webpack.NoEmitOnErrorsPlugin()
       ]
 }
