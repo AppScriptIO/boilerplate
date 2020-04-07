@@ -10,7 +10,7 @@ const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/mernSimpleSetu
 
 const app = express() 
 
-// comment out when for production
+// comment out for production build
 import devBundle from './devBundle'
 devBundle.compile(app)
 
