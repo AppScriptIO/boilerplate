@@ -7,6 +7,8 @@ import cors from 'cors'
 import helmet from 'helmet'
 import morgan from 'morgan'
 import template from "./template.js";
+import userRoutes from './routes/user.routes.js'
+import authRoutes from './routes/auth.routes.js'
 
 const CURRENT_WORKING_DIR = process.cwd()
 
@@ -27,6 +29,13 @@ app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 app.get('/', (req, res) => {
   res.status(200).send(template())
+})
+
+app.use('/', userRoutes)
+app.use('/', authRoutes)
+app.use((err, req, res, next) => { 
+  // handle unauthorized error (express-jwt)
+  if(err.name === 'UnauthorizedError') res.status(401).json({ error: `${err.name}: ${err.message}` })
 })
 
 export default app

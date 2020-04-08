@@ -4,9 +4,13 @@ import config from "../config/config.js";
 import mongoose from 'mongoose'
 
 // comment out for production build
-import devBundle from './devBundle'
-devBundle.compile(app)
+import { compile } from './devBundle'
+compile(app)
 
+// fix deprecation warnings
+mongoose.set('useNewUrlParser', true)
+mongoose.set('useCreateIndex', true)
+mongoose.set('useUnifiedTopology', true)
 mongoose.connect(config.mongoUri) 
 mongoose.connection.on('error', (error) => {
   console.log(`Unable to connect to database: ${config.mongoUri}`)
