@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { Card, CardContent, CardMedia } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
 import seashellImg from '../assets/images/seashell.jpg'
 
 const styles = theme => ({
@@ -32,6 +32,7 @@ class Home extends Component {
             <Typography type="body1" component="p">
               Welcome to the MERN Skeleton home page.
             </Typography>
+            <Link to='/users'>Users</Link>
           </CardContent>
         </Card>
       </div> 

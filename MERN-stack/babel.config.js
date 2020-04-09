@@ -15,6 +15,7 @@ module.exports = {
     ],
     "plugins": [
       ["@babel/plugin-transform-runtime", { corejs: 3 }],
-      "react-hot-loader/babel"
+      "react-hot-loader/babel",
+      "@babel/plugin-proposal-class-properties"
     ]
 }
