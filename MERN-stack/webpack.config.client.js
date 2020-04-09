@@ -16,6 +16,12 @@ const config = {
         filename: 'bundle.js',
         publicPath: '/dist/'
     },
+    resolve: {
+        alias: {
+            // https://github.com/gaearon/react-hot-loader/issues/1227
+            'react-dom': '@hot-loader/react-dom'
+        }
+    },
     module: {
         rules: [
             {

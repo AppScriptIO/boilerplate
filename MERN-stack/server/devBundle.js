@@ -8,9 +8,9 @@ export const compile = (app) => {
   if(config.env == "development"){
     const compiler = webpack(webpackConfig)
     const middleware = webpackMiddleware(compiler, {
-      lazy: false,
+      // lazy: false,
       publicPath: webpackConfig.output.publicPath,
-      headers: { 'Access-Control-Allow-Origin': '*' },
+      // headers: { 'Access-Control-Allow-Origin': '*' },
     })
     app.use(middleware)
     app.use(webpackHotMiddleware(compiler, {
