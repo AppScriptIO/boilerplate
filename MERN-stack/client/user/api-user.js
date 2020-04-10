@@ -22,7 +22,7 @@ export const read = (params, credentials) => fetch(`/api/users/${params.userId}`
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json', 
-      'Authorization': 'Brearer ' + credentials.t
+      'Authorization': 'Bearer ' + credentials.t
     }
   })
   .then(response => response.json())

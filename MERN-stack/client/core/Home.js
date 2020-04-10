@@ -32,7 +32,10 @@ class Home extends Component {
             <Typography type="body1" component="p">
               Welcome to the MERN Skeleton home page.
             </Typography>
+            <Link to='/signup'>Signup</Link>
+            <Link to='/signin'>Signin</Link>
             <Link to='/users'>Users</Link>
+            <Link to='/user/5e8dc9ef84ba8b077c7a5b11'>Profile</Link>
           </CardContent>
         </Card>
       </div> 

@@ -20,8 +20,8 @@ const styles = theme => ({
 class Users extends Component {
   state = { users: [] }
 
-  componentDidMount = () => {
-    list().then(data => {
+  async componentDidMount() {
+    await list().then(data => {
       if(data.error) console.log(error)
       else this.setState({ users: data })
     })
@@ -50,6 +50,10 @@ class Users extends Component {
       </Paper>
     )
   } 
+}
+
+Users.propTypes = {
+  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Users)

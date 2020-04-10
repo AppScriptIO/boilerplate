@@ -1,6 +1,6 @@
+import { signout } from './api-auth.js'
 
-
-export default auth = {
+const auth = {
   authenticate(jwt, cb) {
     if(typeof window !== "undefined")
       sessionStorage.setItem('jwt', JSON.stringify(jwt))
@@ -25,3 +25,5 @@ export default auth = {
       })
   }
 }
+
+export default auth
