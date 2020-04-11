@@ -6,10 +6,20 @@ import Signup from './user/Signup.js'
 import Signin from './auth/Signin.js'
 import Profile from './user/Profile.js'
 import EditProfile from './user/EditProfile.js'
+import Menu from './core/Menu.js'
 
 class MainRouter extends Component {
+  // Removes the server-side injected CSS when React component mounts
+  componentDidMount() {
+    const jssStyles = document.getElementById('jss-server-side')
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles)
+    }
+  }
+
   render() {
     return (<div>
+      <Menu/>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/users" component={Users} />

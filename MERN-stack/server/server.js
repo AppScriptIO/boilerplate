@@ -3,10 +3,6 @@ import app from './express.js'
 import config from "../config/config.js";
 import mongoose from 'mongoose'
 
-// comment out for production build
-import { compile } from './devBundle'
-compile(app)
-
 // fix deprecation warnings
 mongoose.set('useNewUrlParser', true)
 mongoose.set('useCreateIndex', true)
