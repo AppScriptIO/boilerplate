@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PrivateRoute from './auth/PrivateRoute.js'
 import Home from './core/Home.js'
 import Users from './user/Users.js'
 import Signup from './user/Signup.js'
@@ -25,7 +26,7 @@ class MainRouter extends Component {
         <Route path="/users" component={Users} />
         <Route path="/signup" component={Signup} />
         <Route path="/signin" component={Signin} />
-        <Route path="/user/edit/:userId" component={EditProfile} />
+        <PrivateRoute path="/user/edit/:userId" component={EditProfile} />
         <Route path="/user/:userId" component={Profile} />
       </Switch>
     </div>)
